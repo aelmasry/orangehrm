@@ -23,9 +23,10 @@ $(document).ready(function(){
             var startDateArray=startdate1.split("-");
             var startDate = new Date(startDateArray[0], startDateArray[1]-1, startDateArray[2]);
             var newEndDate= new Date(endDate);
-            if (newEndDate < startDate) {
-                displayMessages('warning', lang_noFutureTimesheets);
-            }else{
+// go-faustino - allow future timesheets
+//            if (newEndDate < startDate) {
+//                displayMessages('warning', lang_noFutureTimesheets);
+//            }else{
                 url=createTimesheet+"?startDate="+startdate1+"&employeeId="+employeeId
                 $.getJSON(url, function(data) {
                     if(data[0]==1){
@@ -42,7 +43,7 @@ $(document).ready(function(){
                         $('form#createTimesheetForm').submit();
                     }
                 })
-            }
+//            }
         }
         else{
             displayMessages('warning', lang_invalidDate);

@@ -17,11 +17,12 @@ $(document).ready(function(){
             var startDateArray=startdate1.split("-");
             var startDate = new Date(startDateArray[0], startDateArray[1]-1, startDateArray[2]);
             var newEndDate= new Date(endDateArray[0],endDateArray[1]-1,endDateArray[2]);
-            if (newEndDate < startDate)
-            { 
-                $('#validationMsg').attr('class', "message warning");
-                $('#validationMsg').html(lang_noFutureTimesheets);
-            }else{
+// go-faustino - allow future timesheets
+//            if (newEndDate < startDate)
+//            { 
+//                $('#validationMsg').attr('class', "message warning");
+//                $('#validationMsg').html(lang_noFutureTimesheets);
+//            }else{
                 url=createTimesheet+"?startDate="+startdate1+"&employeeId="+employeeId
                 $.getJSON(url, function(data) {
                     if(data[0]==1){
@@ -40,7 +41,7 @@ $(document).ready(function(){
                         $('form#createTimesheetForm').submit();
                     }
                 })
-            }
+//            }
         }
         else{
             $('#validationMsg').attr('class', "message warning");

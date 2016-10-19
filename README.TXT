@@ -1,3 +1,8 @@
+This is a fork of OrangeHRM version 3.3.3. with the following changes:
+
+- Allow timesheets for future dates
+
+ORIGINAL README.TXT
 
 OrangeHRM is a comprehensive Human Resource Management (HRM) System that captures 
 all the essential functionalities required for any enterprise. 
